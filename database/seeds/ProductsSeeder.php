@@ -15,7 +15,7 @@ class ProductsSeeder extends Seeder
     {
         factory(Product::class, 30)->create()->each(function ($product) {
             $product
-                ->status()
+                ->productStatus()
                 ->save(factory(ProductStatus::class)
                     ->make(['product_id' => $product->id]));
         });
