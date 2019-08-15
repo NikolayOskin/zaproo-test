@@ -24,7 +24,7 @@ class ProductsTest extends TestCase
     public function test_delete_product()
     {
         $response = $this
-            ->json('DELETE', '/api/v1/product/4');
+            ->json('DELETE', '/api/v1/product/35');
 
         $response->assertStatus(200);
     }
@@ -33,7 +33,7 @@ class ProductsTest extends TestCase
     {
         $rand = rand(0, 1535343);
         $data = [
-            'price' => "152.35",
+            'price' => "1459.3601",
             'name' => "Prod3432a{$rand}",
             'in_stock' => "1",
         ];
@@ -53,6 +53,14 @@ class ProductsTest extends TestCase
 
         $response = $this
             ->json('PUT', '/api/v1/product/1', $data);
+
+        $response->assertStatus(200);
+    }
+
+    public function test_search()
+    {
+        $response = $this
+            ->json('GET', '/api/v1/products/search?in_stock=0&term=1');
 
         $response->assertStatus(200);
     }
