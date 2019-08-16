@@ -4,7 +4,7 @@
 3. cp .env.example .env
 4. php artisan key:generate
 5. fill .env with your database credentials
-6. php artisan:migrate fresh --seed
+6. php artisan migrate:fresh --seed
 7. php artisan serve
 
 
