@@ -8,11 +8,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ProductsTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
     public function test_list_all_products()
     {
         $response = $this
