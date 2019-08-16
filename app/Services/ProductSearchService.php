@@ -11,13 +11,13 @@ class ProductSearchService
     {
         $products = Product::with('productStatus');
 
-        if ($request->has('in_stock') && !empty($request->in_stock)) {
+        if ($request->has('in_stock') && isset($request->term)) {
             $products = Product::whereHas('productStatus', function ($query) use ($request) {
                 $query->where('in_stock', '=', $request->in_stock);
             });
         }
 
-        if ($request->has('term') && $request->term) {
+        if ($request->has('term') && isset($request->term)) {
             $products->where('name', 'like', "%{$request->term}%");
         }
 
