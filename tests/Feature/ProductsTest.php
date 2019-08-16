@@ -16,7 +16,15 @@ class ProductsTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_delete_product()
+    public function test_delete_existed_product()
+    {
+        $response = $this
+            ->json('DELETE', '/api/v1/product/2');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_delete_not_existed_product()
     {
         $response = $this
             ->json('DELETE', '/api/v1/product/35');
