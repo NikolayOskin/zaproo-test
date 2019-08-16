@@ -11,7 +11,7 @@ class ProductSearchService
     {
         $products = Product::with('productStatus');
 
-        if ($request->has('in_stock') && isset($request->term)) {
+        if ($request->has('in_stock') && isset($request->in_stock)) {
             $products = Product::whereHas('productStatus', function ($query) use ($request) {
                 $query->where('in_stock', '=', $request->in_stock);
             });
