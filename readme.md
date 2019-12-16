@@ -20,7 +20,8 @@ name and/or by status.
 messages.
 4. Document the API: explain the proper way to use it. Assume that the reader is not
 familiar with the API, and will be using it as a service (having no access to the source
-code).  
+code).
+
 Write the application in PHP. Use a MySQL database.  
 Please submit to a git repository:  
 ● API source code (including a README file with deployment instructions);  
